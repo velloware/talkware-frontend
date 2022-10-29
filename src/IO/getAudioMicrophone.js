@@ -29,21 +29,23 @@ export class AudioMicrophone {
         const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
         chunks = [];
 
+        //Aqui vc pode reproduzir se quiser
         console.log(blob);
-        var audioURL = window.URL.createObjectURL(blob);
-        audio.controls = true;
-        audio.src = audioURL;
-        audio.play();
+        // var audioURL = window.URL.createObjectURL(blob);
+        // audio.controls = true;
+        // audio.src = audioURL;
+        // audio.play();
 
-        // let reader = new FileReader();
-        // reader.readAsDataURL(blob);
-        // reader.onloadend = function () {
-        //   let data = reader.result.split(";base64,")[1];
-        //   data = encodeURIComponent(data);
+        //Aqui estamos pegando o Blob e transformando em base64
+        let reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = function () {
+          let data = reader.result.split(";base64,")[1];
+          data = encodeURIComponent(data);
 
-        //   console.log("socketEventEmmit");
-        //   console.log(data);
-        // };
+          console.log("");
+          console.log(data);
+        };
       };
     } catch (error) {
       console.log("The following getUserMedia error occurred: " + error);
