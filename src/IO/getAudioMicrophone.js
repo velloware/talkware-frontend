@@ -23,7 +23,8 @@ export class AudioMicrophone {
 
       mediaRecorder = new MediaRecorder(GetMidiaStream);
       mediaRecorder.start(2000);
-
+      // Adicionamos uma funcao anonima dentro da propriedade ondataavaliable,
+      // A cada Event que o MediaRecorder "Emite" a funcao ondataavailable e chamada
       mediaRecorder.ondataavailable = function (e) {
         chunks.push(e.data);
         const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
