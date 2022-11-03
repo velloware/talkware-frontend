@@ -1,0 +1,44 @@
+.messageSend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 50vw;
+  height: 3em;
+  background-color: #4a4b4e;
+  border-radius: 4px;
+}
+
+.inputSend {
+  width: 80%;
+  height: 2em;
+  margin-left: .5em;
+  border-radius: 4px;
+  border: none;
+  border: 1px solid  rgba(0, 0, 0, .8);
+  color: #ffffff;
+  font-size: .8em;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.inputSend:focus-visible {
+  outline: 2px solid #5130D8;
+  border-radius: 4px;
+}
+
+.buttonSend {
+  background-color: #23B531;
+  border: none;
+  margin-right: .5em;
+  height: 2em;
+  width: 8%;
+  border-radius: 4px;
+  color: #111;
+  font-size: 1em;
+}
+
+.buttonSend:hover {
+  cursor: pointer;
+  background-color: #111;
+  color: #23B531;
+  transition: .2s;
+}
