@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Message.module.css';
+import styles from './InputSend.module.css';
 
 const InputSend = () => {
   return (

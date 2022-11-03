@@ -1,44 +1,41 @@
-.messageSend {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 50vw;
-  height: 3em;
-  background-color: #4a4b4e;
-  border-radius: 4px;
+.messageDiv {
+  background-color: rgba(0, 0, 0, .9);
+  width: 95%;
+  border: 4px;
+  margin: 10px auto;
+  min-height: 10vh;
+
 }
 
-.inputSend {
-  width: 80%;
-  height: 2em;
-  margin-left: .5em;
-  border-radius: 4px;
-  border: none;
-  border: 1px solid  rgba(0, 0, 0, .8);
-  color: #ffffff;
+.message {
+  display: inline-block;
+  color: #eee;
+  font-size: 1.2em;
+  margin: 7px;
+}
+
+.messageNickname {
+  color: #6e4df3;
+  text-shadow: .5px .5px .5px #eee;
+  margin-left: 5px;
+  text-transform: uppercase;
   font-size: .8em;
-  background-color: rgba(0, 0, 0, .8);
+  animation: animate 2s linear infinite;
 }
 
-.inputSend:focus-visible {
-  outline: 2px solid #5130D8;
-  border-radius: 4px;
-}
+@keyframes animate{
+  0%{
+    opacity: .3;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: .2;
+  }
 
-.buttonSend {
-  background-color: #23B531;
-  border: none;
-  margin-right: .5em;
-  height: 2em;
-  width: 8%;
-  border-radius: 4px;
-  color: #111;
-  font-size: 1em;
-}
 
-.buttonSend:hover {
-  cursor: pointer;
-  background-color: #111;
-  color: #23B531;
-  transition: .2s;
+}
+.recived {
+  background-color: rgba(0, 0, 0, .7);
 }
