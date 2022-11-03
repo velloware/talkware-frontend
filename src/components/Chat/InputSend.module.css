@@ -4,8 +4,10 @@
   align-items: center;
   max-width: 50vw;
   height: 3em;
-  background-color: #4a4b4e;
-  border-radius: 4px;
+  background-color: #01090c;
+  background-image: linear-gradient(286deg, #01090c 0%, #02041d 100%);
+  
+  border-radius: 0px 0px 4px 4px;
 }
 
 .inputSend {
@@ -17,28 +19,30 @@
   border: 1px solid  rgba(0, 0, 0, .8);
   color: #ffffff;
   font-size: .8em;
-  background-color: rgba(0, 0, 0, .8);
+  background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
 }
 
 .inputSend:focus-visible {
   outline: 2px solid #5130D8;
   border-radius: 4px;
 }
-
+         
 .buttonSend {
-  background-color: #23B531;
-  border: none;
-  margin-right: .5em;
+  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
   height: 2em;
   width: 8%;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;       
+  margin-right: .5em;     
   border-radius: 4px;
-  color: #111;
-  font-size: 1em;
+  border: none;
 }
 
 .buttonSend:hover {
   cursor: pointer;
-  background-color: #111;
-  color: #23B531;
-  transition: .2s;
+  background-position: right center; /* change the direction of the change here */
+  color: #2d2e30;
+  text-decoration: none;
 }
