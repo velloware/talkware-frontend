@@ -1,0 +1,21 @@
+name: Merge Branch to main
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  test-curl-action:
+    name: "Merge to Main"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Notify Dash"
+        uses: indiesdev/curl@v1.1
+        id: api
+        with:
+          url: https://dash.velloware.com/api/notification
+          method: "POST"
+          accept: 200
+          body: '{"message": "📢Merge branch/{${{ github.ref_name }} on ${{ github.repository }} - by ${{ github.actor }}\n'
+          log-response: true
