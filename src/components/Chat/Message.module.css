@@ -1,10 +1,27 @@
 .messageDiv {
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, .7);
   width: 95%;
-  border: 4px;
+  border-radius: 4px;
   margin: 10px auto;
   min-height: 10vh;
+  position: relative;
+}
 
+.messageDiv::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 30px;
+  right: -10px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid rgba(0, 0, 0, .7); 
+}
+
+.recived.messageDiv::after {
+  left: -20px;
+  border-right: 10px solid rgba(43, 121, 211, 0.5); 
 }
 
 .message {
@@ -37,5 +54,5 @@
 
 }
 .recived {
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(43, 121, 211, 0.5);
 }

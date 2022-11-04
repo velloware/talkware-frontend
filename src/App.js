@@ -5,9 +5,7 @@ import "./useUSerMedia";
 export default function App() {
   return (
     <div className="App">
-      <h1>Hello Talkware</h1>
-
-      <Chat />
+      <Chat roomName='PAC MAN' />
     </div>
   );
 }
