@@ -4,6 +4,6 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(50,9,121,1) 35%, rgba(0,212,255,1) 100%);
   padding: 10px 0px;
   border-radius: 4px 4px 0px 0px;
-  height: 60vh;
+  height: 75vh;
   overflow-y: auto;
 }
