@@ -41,7 +41,18 @@
 
 .buttonSend:hover {
   cursor: pointer;
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
   color: #2d2e30;
   text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .messageSend {
+    max-width: 90vw;
+  }
+  .buttonSend {
+    height: 2.7em;
+    margin-right: 1em;
+    width: 10%;
+  }
 }

@@ -14,3 +14,9 @@
   height: 2.2em;
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 480px) {
+  .chat {
+    max-width: 90vw;
+  }
+}

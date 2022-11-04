@@ -15,7 +15,7 @@ export class AudioMicrophone {
     let chunks = [];
     let mediaRecorder = null;
 
-    var audio = document.createElement("audio");
+    //var audio = document.createElement("audio");
     try {
       const GetMidiaStream = await navigator.mediaDevices.getUserMedia({
         audio: true,
