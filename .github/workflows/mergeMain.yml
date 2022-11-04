@@ -17,5 +17,5 @@ jobs:
           url: https://dash.velloware.com/api/notification
           method: "POST"
           accept: 200
-          body: '{"message": "\nMerge branch-{${{ github.ref_name }}}\n To: ${{ github.repository }}\n\nby ${{ github.actor }}"}'
+          body: '{"message": "\nMerge Notify\nBranch:{${{ github.ref_name }}}\nTo: ${{ github.repository }}\n\nby: ${{ github.actor }}"}'
           log-response: true
