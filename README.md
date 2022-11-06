@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+<p align="center">
+   <img src="https://avatars.githubusercontent.com/u/105833248?s=400&u=23db20e40ccd72d71fa4e22600335d2c8518a8b1&v=4" alt="talkware" width="280"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">	
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/velloware/talkware-frontend?color=774DD6">
 
-## Available Scripts
+  <a href="https://github.com/velloware/talkware-frontend/commits">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/velloware/talkware-frontend?color=774DD6">
+  </a> 
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-8257E5">
+  <a href="https://github.com/velloware/talkware-frontend/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/velloware/talkware-frontend?color=8257E5&logo=github">
+  </a>
+</p>
 
-In the project directory, you can run:
+<p align="center">
+    <a href="README.md">English</a>
+ </p>
 
-### `npm start`
+# :pushpin: Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Technologies](#computer-technologies)
+* [How Works Application](#how-works)
+* [Features](#rocket-features)
+* [How to Run](#construction_worker-how-to-run)
+* [Contributing](#tada-contributing)
+* [License](#closed_book-license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# :computer: Technologies
+This project was made using the follow technologies:
 
-### `npm test`
+* [Javascript](https://www.typescriptlang.org/)
+* [React](https://reactjs.org/) - Js Library
+* [Prettier](https://prettier.io/) - Code Formatter
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# :rocket: Features
 
-### `npm run build`
+- [ ] create User
+- [ ] LogIn and SingIn
+- [ ] Create Rooms
+- [ ] Join to Rooms
+- [ ] Join to Rooms Anonymous (Dont need LogIn)
+- [ ] Chat in real time in Room
+- [ ] Stream Chat
+- [ ] Stream Voice
+- [ ] Voice Chat
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# how works
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application is Frontend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- You can create Room and get Id, using this id your friends can Join in Room to talk, in Chat or Voice chat.
+- You join Room using LogIn or Anonymous User
 
-### `npm run eject`
+### THIS APPLICATION DONT PERSISTENCE OR SALVE MESSAGES OR LOGS, THIS CHAT IS FULL PRIVACITY AND SECURITY
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# :construction_worker: How to run
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 💻 Run Web Project
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Clone Repository
+$ git clone https://github.com/velloware/talkware-frontend.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install Dependencies
+$ npm ci i
 
-## Learn More
+# Run Aplication
+$ npm start
+```
+Go to http://localhost:8080/ to see the result.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# :tada: contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to **file a new issue** with a respective title and description on the the [talkware](https://github.com/velloware/talkware-frontend/issues) repository. If you already found a solution to your problem, **i would love to review your pull request**!
 
-### Code Splitting
+# :closed_book: License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Released in 2022 :closed_book: License
+This project is under the [MIT license](./LICENSE).
