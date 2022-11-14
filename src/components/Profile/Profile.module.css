@@ -1,4 +1,4 @@
-.roomsDiv {
+.profileDiv {
   max-width: 20vw;
 }
 
@@ -10,7 +10,7 @@
 
 }
 
-.roomsTitle, .roomsAdd {
+.profileTitle, .profileAdd {
   color: #6e4df3;
   text-shadow: .5px .5px .5px #eee;
   background-color: #01090c;
@@ -21,18 +21,18 @@
   width: 70%;
 }
 
-.roomsTitle {
+.profileTitle {
   font-size: 1.3em;
 }
 
-.roomsAdd {
+.profileAdd {
   width: 20%;
   height: 27px;
   position: relative;
   cursor: pointer;
 }
 
-.roomsAdd::after {
+.profileAdd::after {
   content: '';
   position: absolute;
   top: 39%;
@@ -44,7 +44,7 @@
   transition: all .2s;
 }
 
-.roomsAdd::before {
+.profileAdd::before {
   content: '';
   position: absolute;
   top: 39%;
@@ -57,11 +57,11 @@
   transition: all .2s;
 }
 
-.roomsAdd:hover::after, .roomsAdd:hover::before  {
+.profileAdd:hover::after, .profileAdd:hover::before  {
   background-color: #6e4df3;
 }
 
-.rooms {
+.profile {
   border-radius: 4px;
   color: #eee;
   padding: 5px;
@@ -70,15 +70,9 @@
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(50,9,121,1) 35%, rgba(0,212,255,1) 100%);
 }
 
-.rooms div {
+.profile div {
   font-weight: bold;
   text-shadow: 1px 1px 1px #6e4df3;
   margin-bottom: 5px;
   font-size: 1.1em;
-  transition: all .1s;
-}
-.rooms div:hover {
-  cursor: pointer;
-  color: #6e4df3;
-  text-shadow: 1px 1px 1px rgb(2,0,36);
 }
