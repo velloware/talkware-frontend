@@ -8,22 +8,26 @@ const MessageArea = ({ messagesArray }) => {
     {
       nickname: 'Pepino',
       message: 'Bom dia!',
-      recived: false
+      recived: false,
+      id: 'fdsfsad'
     },
     {
       nickname: 'Pato',
       message: 'Bom dia!',
-      recived: true
+      recived: true,
+      id: 'fdsfsa44d'
     },
     {
       nickname: 'Pepino01',
       message: 'Bom dia ',
-      recived: true
+      recived: true,
+      id: 'fdsfs344ad'
     },
     {
       nickname: 'Pepino01',
       message: 'Bom dia ',
-      recived: true
+      recived: true,
+      id: 'fdsfs334ad'
     },
 
 
@@ -33,7 +37,8 @@ const MessageArea = ({ messagesArray }) => {
       {
         messagesArray.map((msg) => {
           
-          return <Message 
+          return <Message
+          key={msg.id}
             message={ msg.message } 
             nickname={ msg.nickname } 
             recived={ msg.recived }

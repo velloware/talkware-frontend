@@ -1,13 +1,13 @@
 import React from "react";
-import Chat from "./components/Chat/Chat";
-import Rooms from "./components/Rooms/Rooms";
-// import "./initMicCap";
+import Dashboard from "./components/Dashboard/Dashboard";
+import { RoomData } from "./UserContext";
 
 export default function App() {
   return (
     <div className="App">
-      <Rooms />
-      <Chat roomName="PAC MAN" />
-    </div>
+        <RoomData>
+          <Dashboard />
+        </RoomData>
+      </div>
   );
 }
