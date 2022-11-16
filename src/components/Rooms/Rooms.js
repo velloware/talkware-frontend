@@ -1,11 +1,10 @@
 import React from "react";
 import styles from "./Rooms.module.css";
-//import { RoomSocket } from "../../infra/ws/Room";
 import { UserContext } from '../../UserContext';
 
 const Rooms = ({ rooms }) => {
 
-  const { setRoomStorage, setRoom } = React.useContext(UserContext);
+  const { setRoomStorage, setRoomName } = React.useContext(UserContext);
 
   const openModal = () => {
     const roomId = prompt("Digite o ID da sala");
@@ -13,7 +12,7 @@ const Rooms = ({ rooms }) => {
   };
 
   const selectRoom = (id) => {
-    setRoom(id);
+    setRoomName(id);
   }
 
   return (

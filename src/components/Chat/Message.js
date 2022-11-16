@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Message.module.css';
 
-const Message = ({ message, nickname, recived }) => {
-  nickname = recived ? nickname : 'me';
+const Message = ({ message, user, recived }) => {
+  user = recived ? user : 'me';
 
   return (
     <div className={`${styles.messageDiv} ${recived && styles.recived}  `}>
-      <p className={ styles.messageNickname } >{ nickname }</p>
+      <p className={ styles.user } >{ user }</p>
       <p className={ styles.message }>{ message}</p>
     </div>
   );
