@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Rooms.module.css";
-import { UserContext } from '../../UserContext';
+import { UserContext } from "../../UserContext";
 
 const Rooms = ({ rooms }) => {
-
-  const { setRoomStorage, setRoomName } = React.useContext(UserContext);
+  const { setRoomStorage, setRoomName, joinChat } =
+    React.useContext(UserContext);
 
   const openModal = () => {
     const roomId = prompt("Digite o ID da sala");
@@ -12,20 +12,20 @@ const Rooms = ({ rooms }) => {
   };
 
   const selectRoom = (id) => {
-    setRoomName(id);
-  }
+    joinChat(id);
+  };
 
   return (
-    <div className={ styles.roomsDiv }>
-      <div className={ styles.titleDiv }>
-        <h1 className={ styles.roomsTitle }>ROOMS</h1>
-        <div onClick={ openModal } className={ styles.roomsAdd }></div>
+    <div className={styles.roomsDiv}>
+      <div className={styles.titleDiv}>
+        <h1 className={styles.roomsTitle}>ROOMS</h1>
+        <div onClick={openModal} className={styles.roomsAdd}></div>
       </div>
       <div className={styles.rooms}>
         {rooms.map((room) => {
           return (
-            <div key={ room.id } onClick={() => selectRoom(room.id)}>
-              <span>{ room.name }</span>
+            <div key={room.id} onClick={() => selectRoom(room.id)}>
+              <span>{room.name}</span>
             </div>
           );
         })}

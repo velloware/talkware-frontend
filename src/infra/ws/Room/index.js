@@ -6,10 +6,11 @@ export const RoomSocket = ({
   connectCallback,
   disconnectCallback,
   errorCallback,
-  messageCallback,
   logCallback,
+  messageCallback,
 }) => {
   const socket = useSocket("https://talkware-backend.velloware.com/", {});
+  // const socket = useSocket("localhost:5337", {});
 
   useEffect(() => {
     if (socket) {
@@ -51,8 +52,8 @@ export const RoomSocket = ({
     socket.emit("message", message);
   };
 
-  const joinChat = (room) => {
-    socket.emit("joinChat", room);
+  const joinChat = (roomConectionProps) => {
+    socket.emit("joinChat", roomConectionProps);
   };
 
   return {
