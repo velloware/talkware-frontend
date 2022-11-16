@@ -8,7 +8,7 @@ export const RoomData = ({ children }) => {
   const socket = io('https://talkware-backend.velloware.com/', {});
 
   const [messages, setMessages] = useState([]);
-  const [roomName, setRoomName] = useState('Global');
+  const [roomName, setRoomName] = useState('1');
   const [user, setUser] = useState('');
 
   const controlSize = () => {
