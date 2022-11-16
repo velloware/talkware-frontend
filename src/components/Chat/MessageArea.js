@@ -1,44 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Message from './Message';
 import styles from './MessageArea.module.css';
+import { UserContext } from '../../UserContext';
 
-const MessageArea = ({ messagesArray }) => {
+const MessageArea = () => {
+  
+  const { messages, setMessages } = React.useContext(UserContext);
 
-  messagesArray = [
-    {
-      nickname: 'Pepino',
-      message: 'Bom dia!',
-      recived: false,
-      id: 'fdsfsad'
-    },
-    {
-      nickname: 'Pato',
-      message: 'Bom dia!',
-      recived: true,
-      id: 'fdsfsa44d'
-    },
-    {
-      nickname: 'Pepino01',
-      message: 'Bom dia ',
-      recived: true,
-      id: 'fdsfs344ad'
-    },
-    {
-      nickname: 'Pepino01',
-      message: 'Bom dia ',
-      recived: true,
-      id: 'fdsfs334ad'
-    },
-
-
-  ];
   return (
-    <div className={ styles.messageContainer}>
+    <div id='messageArea'className={ styles.messageContainer}>
       {
-        messagesArray.map((msg) => {
-          
+        messages.map((msg, index) => {
           return <Message
-          key={msg.id}
+          key={index}
             message={ msg.message } 
             nickname={ msg.nickname } 
             recived={ msg.recived }
