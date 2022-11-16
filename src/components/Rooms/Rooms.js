@@ -4,7 +4,7 @@ import { UserContext } from '../../UserContext';
 
 const Rooms = ({ rooms }) => {
 
-  const { setRoomStorage, setRoomName } = React.useContext(UserContext);
+  const { socket, setRoomStorage, setRoomName } = React.useContext(UserContext);
 
   const openModal = () => {
     const roomId = prompt("Digite o ID da sala");
@@ -12,6 +12,11 @@ const Rooms = ({ rooms }) => {
   };
 
   const selectRoom = (id) => {
+
+    socket.emit('joinChat', {
+      idRoom: id,
+      token: 'Anonymous',
+    });
     setRoomName(id);
   }
 

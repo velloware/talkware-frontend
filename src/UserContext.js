@@ -11,28 +11,37 @@ export const RoomData = ({ children }) => {
   const [roomName, setRoomName] = useState('Global');
   const [user, setUser] = useState('');
 
-  const controlSize = () => {
-    if (messages.length > 50) messages.shift();
-  }
+  const controlSize = useCallback(() => {
+    if (messages.length > 50) {
+      messages.shift();
+    }
+  }, [messages]);
 
-  const sendMessage = (textMessage, recived) => {
+  const sendMessage = useCallback((textMessage, recived) => {
+
+    let regex = /(.*):(.*)/;
+    let user = textMessage.replace(regex, "$1");
+    if (!(/(.*:)/.test(textMessage))) user = "System";
+    textMessage = textMessage.replace(regex, "$2");
+    
     setMessages([...messages, {
-      'user': 'user', 
-      'message': textMessage, 
-      'recived': recived 
+      user: user, 
+      message: textMessage, 
+      recived: recived 
     }]);
+  
     socket.emit('message', textMessage);
     controlSize();
     
     const area = document.querySelector('#messageArea');
     let top = area.scrollHeight * 9999;
     area.scrollTop = top;
-  };
+  }, [controlSize, messages, socket]);
 
-  const userName = (user) => {
+  const userName = useCallback((user) => {
     socket.emit('changeName', user);
    // sendMessage(`${user} With Session ${socket.id}`);
-  };
+  }, [socket]);
 
   const onError = error => {
     console.log(error);
@@ -56,25 +65,16 @@ export const RoomData = ({ children }) => {
   
   if (rooms.length === 0) setRoomStorage('Global');
 
-  useEffect(() => {
     socket.on('connect', () => userName(socket.id));
     socket.on('disconnect', () => console.log(`Disconnect For SocketServer`));
     socket.on('error', data => onError(data));
     socket.on('message', data => sendMessage(data, true));
     socket.on('log', data => console.log(data));
     socket.on('voice', data => console.log(data));
-  }, [socket, userName]);
-
-  useEffect(() => {
-    socket.emit('joinChat', {
-      idRoom: roomName,
-      token: 'Anonymous',
-    });
-  }, [socket, roomName]);
-
 
   return (
     <UserContext.Provider value={{
+      socket,
       setRooms,
       setRoomName,
       setUser,
