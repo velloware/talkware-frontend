@@ -3,8 +3,7 @@ import styles from "./Rooms.module.css";
 import { UserContext } from "../../UserContext";
 
 const Rooms = ({ rooms }) => {
-  const { setRoomStorage, setRoomName, joinChat } =
-    React.useContext(UserContext);
+  const { setRoomStorage, joinChat } = React.useContext(UserContext);
 
   const openModal = () => {
     const roomId = prompt("Digite o ID da sala");

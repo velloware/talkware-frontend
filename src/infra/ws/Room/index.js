@@ -25,7 +25,6 @@ export const RoomSocket = ({
       });
 
       socket.on("message", (data) => {
-        console.log("message", data);
         messageCallback(data);
       });
 

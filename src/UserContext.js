@@ -25,8 +25,7 @@ export const RoomData = ({ children }) => {
   };
 
   const messageCallback = (data) => {
-    console.log("messageCallback");
-    setMessages([...messages, data]);
+    sendMessage(data, true);
   };
 
   const roomSocket = RoomSocket({
@@ -38,7 +37,13 @@ export const RoomData = ({ children }) => {
   });
 
   const controlSize = () => {
-    if (messages.length > 50) messages.shift();
+
+    let msg = messages;
+
+    if (msg.length > 50) {
+      msg.shift();
+      setMessages(msg);
+    };
   };
 
   const joinChat = (roomId) => {
@@ -49,21 +54,33 @@ export const RoomData = ({ children }) => {
     setRoomName(roomId);
   };
 
+  const scrollToBottom = () => {
+    const area = document.querySelector("#messageArea");
+    let top = area.scrollHeight * 9999;
+    area.scrollTop = top;
+  }
+
   const sendMessage = (textMessage, recived) => {
+
+    let regex = /(.*):(.*)/;
+    let user = textMessage.replace(regex, "$1");
+
+    if (!(/(.*:)/.test(textMessage))) user = "System";
+
+    textMessage = textMessage.replace(regex, "$2");
+
     setMessages([
       ...messages,
       {
-        user: "user",
+        user: user,
         message: textMessage,
         recived: recived,
       },
     ]);
     roomSocket.sendMessage(textMessage);
     controlSize();
+    scrollToBottom();
 
-    const area = document.querySelector("#messageArea");
-    let top = area.scrollHeight * 9999;
-    area.scrollTop = top;
   };
 
   const getRoomStorage = () => {

@@ -6,7 +6,7 @@ const Message = ({ message, user, recived }) => {
 
   return (
     <div className={`${styles.messageDiv} ${recived && styles.recived}  `}>
-      <p className={ styles.user } >{ user }</p>
+      <p className={ styles.messageNickname } >{ user }</p>
       <p className={ styles.message }>{ message}</p>
     </div>
   );
