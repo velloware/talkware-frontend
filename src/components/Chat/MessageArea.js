@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Message from './Message';
 import styles from './MessageArea.module.css';
 import { UserContext } from '../../UserContext';
 
 const MessageArea = () => {
   
-  const { messages, setMessages } = React.useContext(UserContext);
+  const { messages } = React.useContext(UserContext);
 
   return (
     <div id='messageArea'className={ styles.messageContainer}>
@@ -14,7 +14,7 @@ const MessageArea = () => {
           return <Message
           key={index}
             message={ msg.message } 
-            nickname={ msg.nickname } 
+            user={ msg.user } 
             recived={ msg.recived }
           /> 
         })
