@@ -9,7 +9,11 @@ export const RoomSocket = ({
   logCallback,
   messageCallback,
 }) => {
-  const socket = useSocket("https://talkware-backend.velloware.com/", {});
+  const socket = useSocket("https://talkware-backend.velloware.com/", {
+    query: {
+      token: 'Anonymous',
+    },
+  });
   // const socket = useSocket("localhost:5337", {});
 
   useEffect(() => {
